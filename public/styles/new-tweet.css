@@ -1,0 +1,30 @@
+section{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form{
+  width: 80%;
+}
+#tweet-text{
+  background-color: #f4f1ec;
+  width: 100%;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 50px;
+}
+button{
+  background-color: #4056A1;
+  color: white;
+}
+.btn-counter{
+  display: flex;
+  justify-content: space-between;
+}
+
