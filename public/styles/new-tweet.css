@@ -19,6 +19,9 @@ form{
   border-right: none;
   border-bottom: 50px;
 }
+input::placeholder{
+  font-size: 1.2em;
+}
 button{
   background-color: #4056A1;
   color: white;

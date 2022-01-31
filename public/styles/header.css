@@ -1,4 +1,5 @@
-header{
+header {
+  margin-top: 118px;
   height: 400px;
   width: 100%;
   /* background-color: rgb(235, 243, 252); */
@@ -6,14 +7,10 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-box-shadow: 8px 8px 8px 14px #f4f1ec inset;
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-} 
-img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  box-shadow: 8px 8px 8px 14px #f4f1ec inset;
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+img {
+  
 }
