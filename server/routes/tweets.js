@@ -12,7 +12,7 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.json(tweets);
+        res.json(tweets); //sends a response that is the parameter converted to a JSON string using the JSON.stringify() method
       }
     });
   });
