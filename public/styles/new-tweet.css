@@ -19,6 +19,8 @@ form {
   outline: none;
   border: none;
   border-bottom: 50px;
+  overflow: hidden;
+  resize: none;
 }
 textarea::placeholder {
   font-size: 1.2em;
