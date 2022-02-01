@@ -29,7 +29,10 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
     <!-- font awesome -->
     <script src="https://use.fontawesome.com/97e31ceb25.js"></script>
   </head>
@@ -38,7 +41,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="writeNav">
+      <div class="navBtn">
         <p><strong>Write</strong> your tweet</p>
         <i class="fa fa-angle-double-down" aria-hidden="true"></i>
       </div>
@@ -56,17 +59,63 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- compose new tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST" >
+        <form action="/tweets/" method="POST">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <hr>
+          <textarea
+            name="text"
+            id="tweet-text"
+            placeholder="What are you humming about?"
+          ></textarea>
+          <hr />
           <div class="btn-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <!-- All Tweets from here on -->
+      <section class="tweetsContainer">
+        <article class="tweet header">
+          <div class="iconAndPara">
+            <i class="fa fa-user" aria-hidden="true"> Newton </i>
+            <p>@SirIssac</p>
+          </div>
+          <p>
+            If I have seen further it is by standing on the shoulders of giants
+          </p>
+          <footer>
+            <div class="iconsAndDate">
+              <p>10 days ago</p>
+              <div>
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </div>
+            </div>
+          </footer>
+        </article>
+        <article class="tweet header">
+          <div class="iconAndPara">
+            <i class="fa fa-user" aria-hidden="true"> Penelope </i>
+            <p>@LadyGrey</p>
+          </div>
+          <p>
+            Ladies
+          </p>
+          <footer>
+            <div class="iconsAndDate">
+              <p>20 days ago</p>
+              <div>
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </div>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

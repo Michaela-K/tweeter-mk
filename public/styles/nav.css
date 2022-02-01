@@ -15,20 +15,28 @@ span, button, output{
   font-family: 'Bungee', cursive, sans-serif;
  }
 
-.writeNav{
+.navBtn{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+height: 10px;
 }
 
 i{
-  color: red;
   margin-top: 0px;
+  height: 10px;
+}
+div.navBtn>i{
+  color: rgb(21, 247, 153);
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  margin: 0;
+}
+div.navBtn>p{
+  margin: 0;
 }
 @keyframes floating {
   from { transform: translate(0,  0px); }
