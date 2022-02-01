@@ -19,8 +19,13 @@ form{
   border-right: none;
   border-bottom: 50px;
 }
-input::placeholder{
+textarea::placeholder{
   font-size: 1.2em;
+  position: absolute;
+  bottom: -1px;
+}
+.red{
+  color: red;
 }
 button{
   background-color: #4056A1;
