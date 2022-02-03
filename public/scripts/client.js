@@ -5,10 +5,11 @@
  */
 $(document).ready(function () {
   console.log("client.js : ready");
+
   //no error
   $(".errors").slideUp(10).text("");
 
-  //compose - focus button
+  //compose button - auto focus on textarea
   $(".button").on("click", function () {
     $("textarea").focus();
   });
@@ -19,11 +20,8 @@ $(document).ready(function () {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  //This function shouldn't insert the created DOM structure to the page.
-  //It should instead just return the $tweet to the caller
-  //takes in tweet object & returns tweet article
+ 
   const createTweetElement = (tweetData) => {
-    //should this be tweetform?
     let $newTweet = $(`
         <article class="tweet header">
           <div class="headerContainer">
@@ -60,28 +58,22 @@ $(document).ready(function () {
 
   const renderTweets = function (tweets) {
     $(".tweetsContainer").html("");
-    // loops through array of tweet objects
     for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
       let $tweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
       $(".tweetsContainer").prepend($tweet);
     }
   };
 
-  //create an AJAX POST request in client.js that sends the form data to the server.
   //form submission
   let $form = $(".tweetForm");
   $form.on("submit", function (event) {
-    event.preventDefault(); //page wont refresh
+    event.preventDefault();
     console.log("Button clicked");
 
     //validation
-    //empty
     if ($form.children("textarea").val() === "") {
       return $(".errors").slideDown(400).text("Tweet field cannot be empty");
     }
-    //too long
     if ($form.children("textarea").val().length > 140) {
       return $(".errors").slideDown(400).text("Character limit exceeded");
     }
@@ -89,14 +81,12 @@ $(document).ready(function () {
     //submit tweet to database
     let $formData = $form.serialize();
     $.ajax({
-      url: "/tweets", //is this right?
+      url: "/tweets",
       type: "POST",
-      data: $formData, //The serialize() method creates a URL encoded text string by serializing form values.
+      data: $formData,
     })
       .then(function (tweets) {
-        console.log("post");
-        console.log("success: ", tweets);
-        loadTweets(tweets); //dynamically load
+        loadTweets(tweets);
       })
       .catch((err) => {
         console.log(" formData Error: ", err);
@@ -110,10 +100,9 @@ $(document).ready(function () {
     $.ajax({
       url: "/tweets",
       method: "GET",
-    }) //is this right?
+    })
       .then(function (tweets) {
-        console.log("getting tweets from db");
-        renderTweets(tweets); //You already have a renderTweets function defined which can take in this array of objects and render them to the DOM, so your success callback function will simply call up renderTweets, passing it the response from the AJAX request.
+        renderTweets(tweets); 
       })
       .catch((err) => {
         console.log("loadTweets Error: ", err);

@@ -1,33 +1,35 @@
-nav{
-height: 120px;
-width: 100vw;
-background-color: #7C83FD;
-color: #FFFFFF;
-padding: 1.5em;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: fixed;
-top: 0px;
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color: #7c83fd;
+  color: #ffffff;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0px;
 }
 
-span, button, output{
-  font-family: 'Bungee', cursive, sans-serif;
- }
-
-.navBtn{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 10px;
+span,
+button,
+output {
+  font-family: "Bungee", cursive, sans-serif;
 }
 
-i{
+.navBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+}
+
+i {
   margin-top: 0px;
   height: 10px;
 }
-div.navBtn>i{
+div.navBtn > i {
   color: rgb(21, 247, 153);
   animation-name: floating;
   animation-duration: 3s;
@@ -35,11 +37,17 @@ div.navBtn>i{
   animation-timing-function: ease-in-out;
   margin: 0;
 }
-div.navBtn>p{
+div.navBtn > p {
   margin: 0;
 }
 @keyframes floating {
-  from { transform: translate(0,  0px); }
-  65%  { transform: translate(0, 15px); }
-  to   { transform: translate(0, -0px); }    
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
 }

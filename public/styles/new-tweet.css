@@ -10,7 +10,6 @@ section {
 .new-tweet {
   margin-bottom: 60px;
 }
-/* ERRORS */
 .errors {
   margin-top: 25px;
   border: 0.3px solid rgb(214, 19, 19);
@@ -25,7 +24,6 @@ section {
   align-items: center;
 }
 
-/* FORM */
 form {
   width: 80%;
   margin-top: 50px;
@@ -128,7 +126,7 @@ footer i:hover {
 .iconContainer {
   justify-content: space-around;
 }
-/* all - targets all media types , all - -separates it from all the media features*/
+
 @media all and (max-width: 452px) {
   nav,
   header {
@@ -162,4 +160,4 @@ footer i:hover {
     margin-top: 100px;
   }
 }
-/* CDN - content dilivery network  - source of the script*/
+

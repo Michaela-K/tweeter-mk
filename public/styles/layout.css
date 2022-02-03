@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
   min-width: 355px;
-  
 }
 *,
 *:before,
@@ -20,19 +19,17 @@ html {
 
 body {
   color: #545149;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
-  /* max-width: 1450px; */
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main{
-  /* width: 90%; */
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
