@@ -7,7 +7,9 @@ header {
   justify-content: center;
   align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-  box-shadow: 8px 8px 8px 14px #F8F8F8 inset;
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-color: #7C83FD;
+}
+header img{
+  margin-top: 60px;
 }
 

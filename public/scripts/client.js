@@ -6,18 +6,21 @@
 $(document).ready(function () {
   console.log("client.js : ready");
 
-  // jQuery("time.timeago").timeago();
+ //compose - focus button
+  $(".button").on("click",  function(){
+    $("textarea").focus();
+  });
 
   const tweetData = {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: (datetime = "2008-07-17T09:24:17Z"),
+    // user: {
+    //   name: "Newton",
+    //   avatars: "https://i.imgur.com/73hZDYK.png",
+    //   handle: "@SirIsaac",
+    // },
+    // content: {
+    //   text: "If I have seen further it is by standing on the shoulders of giants",
+    // },
+    // created_at: (datetime = "2008-07-17T09:24:17Z"),
   };
 
   //to prevent application vulnerability
@@ -76,16 +79,20 @@ $(document).ready(function () {
       $(".tweetsContainer").prepend($tweet);
     }
   };
-
-  //error messages
-  // const errorFunction = function(){
-  //   $("form").error(function(){
-  //     $("h2").replacewith("<h2>Error </h2>");
-  //   })
-  // }
-
+  
   //error
-  // $(".errMsg").slideup(400).text('');
+  // $(".errMsg").slideup().text('');
+
+  //error messages < 0
+  //   $("form").error(function(){
+  //     $(".errMsg").replacewith("<h2>"Tweet field cannot be empty"</h2>").slideDown;
+  //   })
+
+  //error msg > 140
+  //   $("form").error(function(){
+  //     $(".errMsg").replacewith("<h2>"character limit exceeded"</h2>").slideDown("slow",);
+  //   })
+
 
   //create an AJAX POST request in client.js that sends the form data to the server.
   //form submission
@@ -93,7 +100,6 @@ $(document).ready(function () {
   $form.on("submit", function (event) {
     event.preventDefault(); //page wont refresh
     console.log("Button clicked");
-
 
     //validation
     //empty
@@ -120,6 +126,9 @@ $(document).ready(function () {
       .catch((err) => {
         console.log(" formData Error: ", err);
       });
+      if($form.children("textarea").val().length > 0){
+        $('#tweet-text').val('');
+      }
   });
 
   function loadTweets() {

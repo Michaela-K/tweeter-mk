@@ -4,27 +4,35 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 
 .new-tweet {
   margin-bottom: 60px;
 }
-/* .errors {
-  border: 2px solid rgb(214, 19, 19);
-  width: 80vw;
-  height: 70px;
+/* ERRORS */
+.errors {
+  margin-top: 25px;
+  border: .3px solid rgb(214, 19, 19);
+  border-radius: 5px;
+  width: 80%;
+  height: 5vh;
   text-align: center;
-} */
-/* .errMsg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.errMsg{
   color: rgb(214, 19, 19);
-  font-size: 25px;
-} */
-/* .errors i{
+  font-size: 21px;
+}
+.errors i{
   color: rgb(214, 19, 19);  
-} */
+}
+/* FORM */
 form {
-  width: 80vw;
+  width: 80%;
+  margin-top: 50px;
 }
 #tweet-text {
   background-color: #F8F8F8;
@@ -36,9 +44,7 @@ form {
   resize: none;
 }
 textarea::placeholder {
-  font-size: 1.2em;
-  position: absolute;
-  bottom: -1px;
+  font-size: 1.15em;
 }
 .red {
   color: red;
@@ -89,21 +95,28 @@ article > p {
   justify-content: flex-start;
   align-items: center;
 }
+.tweetsContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .header {
-  width: 80vw;
+  display: flex;
+  justify-content: center;
+  width: 80%;
 }
 .header > p {
   font-size: 20px;
   height: 80px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-  /* background-color: blueviolet; */
 }
 .user-img {
   height: 30px;
 }
-
+footer i{
+  color: #7C83FD;
+}
 footer i:hover {
   color: rgb(21, 247, 153);
 }
@@ -120,9 +133,36 @@ footer i:hover {
   justify-content: space-around;
 }
 /* all - targets all media types , all - -separates it from all the media features*/
-@media all and (max-width: 484px){
+@media all and (max-width: 452px){
+  nav, header {
+    background-color: #7C83FD;
+  }
   .header > p {
     height: 120px;
   }
+}
+@media only screen and (min-width: 768px) {
+  nav, header {
+    background-color: #7C83FD;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .response{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  header{
+    width: 35%;
+    height: 35vw;
+    margin: 150px 0px 0px 30px;
+  }
+
+  main{
+    width: 65%;
+    margin-top: 100px;
+  }
+
 }
 /* CDN - content dilivery network  - source of the script*/
