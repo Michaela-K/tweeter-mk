@@ -5,23 +5,13 @@
  */
 $(document).ready(function () {
   console.log("client.js : ready");
+  //no error
+  $(".errors").slideUp(10).text("");
 
- //compose - focus button
-  $(".button").on("click",  function(){
+  //compose - focus button
+  $(".button").on("click", function () {
     $("textarea").focus();
   });
-
-  const tweetData = {
-    // user: {
-    //   name: "Newton",
-    //   avatars: "https://i.imgur.com/73hZDYK.png",
-    //   handle: "@SirIsaac",
-    // },
-    // content: {
-    //   text: "If I have seen further it is by standing on the shoulders of giants",
-    // },
-    // created_at: (datetime = "2008-07-17T09:24:17Z"),
-  };
 
   //to prevent application vulnerability
   const escape = function (str) {
@@ -32,10 +22,9 @@ $(document).ready(function () {
   //This function shouldn't insert the created DOM structure to the page.
   //It should instead just return the $tweet to the caller
   //takes in tweet object & returns tweet article
-  function createTweetElement(tweetData) {
+  const createTweetElement = (tweetData) => {
     //should this be tweetform?
     let $newTweet = $(`
-  <section class="tweetsContainer">
         <article class="tweet header">
           <div class="headerContainer">
             <div class="iconAndPara">
@@ -64,35 +53,21 @@ $(document).ready(function () {
             </div>
           </footer>
         </article>
-      </section>
       `);
 
     return $newTweet;
-  }
+  };
 
   const renderTweets = function (tweets) {
+    $(".tweetsContainer").html("");
     // loops through array of tweet objects
-    for (const tweet in tweets) {
+    for (const tweet of tweets) {
       // calls createTweetElement for each tweet
-      let $tweet = createTweetElement(tweets[tweet]);
+      let $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       $(".tweetsContainer").prepend($tweet);
     }
   };
-  
-  //error
-  // $(".errMsg").slideup().text('');
-
-  //error messages < 0
-  //   $("form").error(function(){
-  //     $(".errMsg").replacewith("<h2>"Tweet field cannot be empty"</h2>").slideDown;
-  //   })
-
-  //error msg > 140
-  //   $("form").error(function(){
-  //     $(".errMsg").replacewith("<h2>"character limit exceeded"</h2>").slideDown("slow",);
-  //   })
-
 
   //create an AJAX POST request in client.js that sends the form data to the server.
   //form submission
@@ -104,12 +79,11 @@ $(document).ready(function () {
     //validation
     //empty
     if ($form.children("textarea").val() === "") {
-      alert("Tweet field cannot be empty");
-      // return $(".errMsg").text("Tweet field cannot be empty").slideDown();
+      return $(".errors").slideDown(400).text("Tweet field cannot be empty");
     }
     //too long
     if ($form.children("textarea").val().length > 140) {
-      alert("character limit exceeded");
+      return $(".errors").slideDown(400).text("Character limit exceeded");
     }
 
     //submit tweet to database
@@ -120,18 +94,19 @@ $(document).ready(function () {
       data: $formData, //The serialize() method creates a URL encoded text string by serializing form values.
     })
       .then(function (tweets) {
+        console.log("post");
         console.log("success: ", tweets);
         loadTweets(tweets); //dynamically load
       })
       .catch((err) => {
         console.log(" formData Error: ", err);
       });
-      if($form.children("textarea").val().length > 0){
-        $('#tweet-text').val('');
-      }
+    if ($form.children("textarea").val().length > 0) {
+      $("#tweet-text").val("");
+    }
   });
 
-  function loadTweets() {
+  const loadTweets = function () {
     $.ajax({
       url: "/tweets",
       method: "GET",
@@ -143,5 +118,6 @@ $(document).ready(function () {
       .catch((err) => {
         console.log("loadTweets Error: ", err);
       });
-  }
+  };
+  loadTweets();
 });

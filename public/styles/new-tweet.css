@@ -13,29 +13,25 @@ section {
 /* ERRORS */
 .errors {
   margin-top: 25px;
-  border: .3px solid rgb(214, 19, 19);
+  border: 0.3px solid rgb(214, 19, 19);
+  color: rgb(214, 19, 19);
+  font-size: 21px;
   border-radius: 5px;
-  width: 80%;
-  height: 5vh;
+  width: 75%;
+  height: 4.5vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.errMsg{
-  color: rgb(214, 19, 19);
-  font-size: 21px;
-}
-.errors i{
-  color: rgb(214, 19, 19);  
-}
+
 /* FORM */
 form {
   width: 80%;
   margin-top: 50px;
 }
 #tweet-text {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   width: 100%;
   outline: none;
   border: none;
@@ -50,7 +46,7 @@ textarea::placeholder {
   color: red;
 }
 button {
-  background-color: #7C83FD;
+  background-color: #7c83fd;
   color: white;
 }
 button:hover {
@@ -87,7 +83,7 @@ article > p {
   padding-top: 20px;
   height: 15px;
 }
-.quote{
+.quote {
   width: 100%;
 }
 .iconAndPara {
@@ -95,7 +91,7 @@ article > p {
   justify-content: flex-start;
   align-items: center;
 }
-.tweetsContainer{
+.tweetsContainer {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -114,8 +110,8 @@ article > p {
 .user-img {
   height: 30px;
 }
-footer i{
-  color: #7C83FD;
+footer i {
+  color: #7c83fd;
 }
 footer i:hover {
   color: rgb(21, 247, 153);
@@ -133,36 +129,37 @@ footer i:hover {
   justify-content: space-around;
 }
 /* all - targets all media types , all - -separates it from all the media features*/
-@media all and (max-width: 452px){
-  nav, header {
-    background-color: #7C83FD;
+@media all and (max-width: 452px) {
+  nav,
+  header {
+    background-color: #7c83fd;
   }
   .header > p {
     height: 120px;
   }
 }
 @media only screen and (min-width: 768px) {
-  nav, header {
-    background-color: #7C83FD;
+  nav,
+  header {
+    background-color: #7c83fd;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .response{
+  .response {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
   }
-  header{
+  header {
     width: 35%;
     height: 35vw;
     margin: 150px 0px 0px 30px;
   }
 
-  main{
+  main {
     width: 65%;
     margin-top: 100px;
   }
-
 }
 /* CDN - content dilivery network  - source of the script*/
