@@ -10,11 +10,24 @@ section {
 .new-tweet {
   margin-bottom: 60px;
 }
+/* .errors {
+  border: 2px solid rgb(214, 19, 19);
+  width: 80vw;
+  height: 70px;
+  text-align: center;
+} */
+/* .errMsg{
+  color: rgb(214, 19, 19);
+  font-size: 25px;
+} */
+/* .errors i{
+  color: rgb(214, 19, 19);  
+} */
 form {
-  width: 80%;
+  width: 80vw;
 }
 #tweet-text {
-  background-color: #f4f1ec;
+  background-color: #F8F8F8;
   width: 100%;
   outline: none;
   border: none;
@@ -31,8 +44,11 @@ textarea::placeholder {
   color: red;
 }
 button {
-  background-color: #4056a1;
+  background-color: #7C83FD;
   color: white;
+}
+button:hover {
+  background-color: rgba(17, 199, 123, 0.75);
 }
 .btn-counter {
   display: flex;
@@ -45,33 +61,49 @@ article {
   padding: 15px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: 30px;
 }
 article:hover {
-  -webkit-box-shadow: 7px 7px 0px 1px rgb(21, 247, 153, 0.30);
-  box-shadow: 7px 7px 0px 1px rgba(21, 247, 153, 0.30);
+  -webkit-box-shadow: 7px 7px 0px 1px rgb(21, 247, 153, 0.4);
+  box-shadow: 7px 7px 0px 1px rgba(21, 247, 153, 0.4);
 }
 
 article > p {
-  margin-top: 50px;
+  margin-top: 30px;
   border-bottom: 3px solid grey;
 }
-
-.iconAndPara {
+.headerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
   height: 15px;
+}
+.quote{
+  width: 100%;
+}
+.iconAndPara {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .header {
   width: 80vw;
 }
 .header > p {
   font-size: 20px;
-  height: 50px;
+  height: 80px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
   /* background-color: blueviolet; */
 }
+.user-img {
+  height: 30px;
+}
+
 footer i:hover {
   color: rgb(21, 247, 153);
 }
@@ -84,4 +116,13 @@ footer i:hover {
   font-size: 17px;
 }
 
+.iconContainer {
+  justify-content: space-around;
+}
+/* all - targets all media types , all - -separates it from all the media features*/
+@media all and (max-width: 484px){
+  .header > p {
+    height: 120px;
+  }
+}
 /* CDN - content dilivery network  - source of the script*/

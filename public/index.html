@@ -35,6 +35,9 @@
     ></script>
     <!-- font awesome -->
     <script src="https://use.fontawesome.com/97e31ceb25.js"></script>
+    <!-- timeago -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" type="text/javascript"></script>
+    <script src="jquery.timeago.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -43,7 +46,7 @@
       <span>tweeter</span>
       <div class="navBtn">
         <p><strong>Write</strong> your tweet</p>
-        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+        <i class="fa fa-angle-double-down"></i>
       </div>
     </nav>
 
@@ -62,7 +65,7 @@
       <!-- compose new tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+        <form class= "tweetForm" action="/tweets" method="POST">
           <label for="tweet-text"></label>
           <textarea
             name="text"
@@ -79,36 +82,22 @@
       <!-- All Tweets from here on -->
       <section class="tweetsContainer">
         <article class="tweet header">
-          <div class="iconAndPara">
-            <i class="fa fa-user" aria-hidden="true"> Newton </i>
-            <p>@SirIssac</p>
-          </div>
-          <p>
-            If I have seen further it is by standing on the shoulders of giants
-          </p>
-          <footer>
-            <div class="iconsAndDate">
-              <p>10 days ago</p>
-              <div>
-                <i class="fa fa-flag" aria-hidden="true"></i>
-                <i class="fa fa-retweet" aria-hidden="true"></i>
-                <i class="fa fa-heart" aria-hidden="true"></i>
-              </div>
+          <div class="headerContainer">
+            <div class="iconAndPara">
+              <p class="pImg">
+                <img class="user-img" src="https://i.imgur.com/73hZDYK.png" aria-hidden="true"></img>
+                Newton
+              </p>
             </div>
-          </footer>
-        </article>
-        <article class="tweet header">
-          <div class="iconAndPara">
-            <i class="fa fa-user" aria-hidden="true"> Penelope </i>
-            <p>@LadyGrey</p>
+            <p class="at">@SirIssac</p>
           </div>
-          <p>
-            Ladies
+          <p class="quote">
+            If I have seen further it is by standing on the shoulders of giants. I am trying to make 140 characters so I will enter a lot of text here..
           </p>
-          <footer>
+          <footer class="footer">
             <div class="iconsAndDate">
-              <p>20 days ago</p>
-              <div>
+              <time class ="timeago" datetime="2008-07-17T09:24:17Z">10 days ago</time>
+              <div class="iconContainer">
                 <i class="fa fa-flag" aria-hidden="true"></i>
                 <i class="fa fa-retweet" aria-hidden="true"></i>
                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -117,6 +106,10 @@
           </footer>
         </article>
       </section>
+      <!-- errors -->
+      <!-- <div>
+        <p></p>
+      </div> -->
     </main>
   </body>
 </html>

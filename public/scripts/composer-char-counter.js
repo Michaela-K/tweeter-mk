@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log('ready')
+  console.log("composer-char-counter: ready")
 });
 
 $(document).ready(function() {
