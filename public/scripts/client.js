@@ -72,10 +72,12 @@ $(document).ready(function () {
 
     //validation
     if ($form.children("textarea").val() === "") {
-      return $(".errors").slideDown(400).text("Tweet field cannot be empty");
+      $(".errors").slideDown(400).text("Tweet field cannot be empty");
+      return $(".errors").delay(10000).slideUp(200);
     }
     if ($form.children("textarea").val().length > 140) {
-      return $(".errors").slideDown(400).text("Character limit exceeded");
+      $(".errors").slideDown(400).text("Character limit exceeded");
+      return $(".errors").delay(5000).slideUp(200);
     }
 
     //submit tweet to database
