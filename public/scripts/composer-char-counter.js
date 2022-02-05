@@ -2,7 +2,6 @@ $(document).ready(function () {
   console.log("composer-char-counter: ready");
 });
 
-$(document).ready(function () {
   $("#tweet-text").on("keyup", function (e) {
     let typedText = $(this).val().length;
     let maxChar = 140;
@@ -17,4 +16,4 @@ $(document).ready(function () {
       count.removeClass("red");
     }
   });
-});
+
