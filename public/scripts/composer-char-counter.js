@@ -2,7 +2,8 @@ $(document).ready(function () {
   console.log("composer-char-counter: ready");
 });
 
-  $("#tweet-text").on("keyup", function (e) {
+$(() => {
+  function set(){
     let typedText = $(this).val().length;
     let maxChar = 140;
     let remainingChars = maxChar - typedText;
@@ -15,5 +16,16 @@ $(document).ready(function () {
     } else {
       count.removeClass("red");
     }
-  });
+  }
+    $("#tweet-text").keyup(set);
 
+});
+
+$(() => {
+  function reloadChar(){
+    let maxChar = 140;
+    $("output.counter").text(maxChar);
+    console.log("submit button clicked")
+  }
+  $(".submit").click(reloadChar);
+});
